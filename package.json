@@ -1,0 +1,25 @@
+{
+    "name": "zedex-syntax-highlighting",
+    "displayName": "zedex-syntax-highlighting",
+    "description": "syntax highlighting for zedex",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "zedex",
+            "aliases": ["zedex", "zedex"],
+            "extensions": ["zx"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "zedex",
+            "scopeName": "source.zedex",
+            "path": "./syntaxes/zedex.tmLanguage.json"
+        }]
+    }
+}

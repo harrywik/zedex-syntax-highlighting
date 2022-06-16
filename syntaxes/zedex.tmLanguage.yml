@@ -1,16 +1,36 @@
-$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
-
 name: zedex
+fileTypes:
+      - zx
 
 patterns:
-      - include: "#keywords"
-      - include: "#strings"
+      - include: '#comments'
+      - include: '#keywords'
+      - include: '#strings'
 
 repository:
+      comments:
+            patterns:
+                  - include: '#line-comment'
+                  - include: '#block-comment'
+
+      block-comment:
+            begin: '\{-'
+            end: '-\}'
+            name: comment.block.documentation.zedex
+            patterns:
+                  - include: '#block-comment'
+      
+      line-comment:
+            begin: '--'
+            end: \n
+            name: comment.line.double-dash.zedex
+            patterns:
+                  - include: '#line-comment'
+
       keywords:
             patterns:
                   - name: keyword.control.zedex
-                    match: \b(typeclass|implements|proof)\b
+                    match: \b(typeclass|implements|proof|where)\b
       strings:
             name: string.quoted.double.zedex
             begin: '"'

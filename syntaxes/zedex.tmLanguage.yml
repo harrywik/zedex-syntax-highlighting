@@ -8,6 +8,7 @@ patterns:
       - include: "#inbuilt-functions"
       - include: "#inbuilt-constants"
       - include: "#datatypes"
+      - include: "#constructors"
       - include: "#strings"
       - include: "#numbers"
 repository:

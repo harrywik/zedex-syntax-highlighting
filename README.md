@@ -7,7 +7,7 @@ Adds syntax highlighting to the language zedex.
 ## Contributors
 
 - Harry Wik
-- Niclas Botö
+- Nicklas Botö
 
 ## Known Issues
 

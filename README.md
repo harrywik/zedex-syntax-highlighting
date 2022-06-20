@@ -12,13 +12,13 @@ The extension is currently not listed in vscode extensions because it is under d
 
 vscode
 ```
-cd ~/vscode/extensions
+cd ~/.vscode/extensions
 git clone https://github.com/harrywik/zedex-syntax-highlighting.git
 ```
 
 vscode-insiders
 ```
-cd ~/vscode-insiders/extensions
+cd ~/.vscode-insiders/extensions
 git clone https://github.com/harrywik/zedex-syntax-highlighting.git
 ```
 

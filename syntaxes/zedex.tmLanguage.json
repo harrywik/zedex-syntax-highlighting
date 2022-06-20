@@ -70,7 +70,7 @@
       "patterns": [
         {
           "name": "keyword.operator.zedex",
-          "match": "\\b(:|->|=|=>)\\b"
+          "match": "\\b(\\+|\\*|=>|->|\\|-)\\b"
         }
       ]
     },
@@ -85,7 +85,7 @@
     "inbuilt-constants": {
       "patterns": [
         {
-          "name": "entity.constant.numeric",
+          "name": "constant.numeric.zedex",
           "match": "\\b(e|pi|i)\\b"
         }
       ]

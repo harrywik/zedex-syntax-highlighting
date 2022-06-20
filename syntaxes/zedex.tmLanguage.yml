@@ -32,8 +32,8 @@ repository:
                     match: \b(proof|typeclass|let|implements|where|in)\b
       operators:
             patterns:
-                  - name: keyword.operator.zedex
-                    match: \b(:|->|=|=>)\b
+                  - name: keyword.operator.zedex 
+                    match: \b(\+|\*|=>|->|\|-)\b 
       
       inbuilt-functions:
             patterns:
@@ -42,7 +42,7 @@ repository:
       
       inbuilt-constants:
             patterns:
-                  - name: entity.constant.numeric
+                  - name: constant.numeric.zedex
                     match: \b(e|pi|i)\b
       
       datatypes:

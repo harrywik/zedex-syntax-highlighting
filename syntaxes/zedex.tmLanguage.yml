@@ -52,17 +52,22 @@ repository:
                   - include: "#after-arrow-type-signature"
 
       type-definition:
-            - match: (^[A-Z][\w']*)(?=\s:=)
-              captures:
-                  '1': {name: entity.name.type.zedex} # does not work
+            patterns:
+                  - match: (^[A-Z][\w']*)(?=\s:=)
+                    captures:
+                        '1': {name: entity.name.type.zedex} # does not work
 
       after-colon-type-signature:
-            - name: entity.name.type.zedex
-              match: ^[a-z][\w']*\s:\s([A-Z][\w']*) # neither does this
+            patterns:
+                  - match: ^[a-z][\w']*\s:\s([A-Z][\w']*) # neither does this
+                    captures:
+                        '1': {name: entity.name.type.zedex}
 
       after-arrow-type-signature:
-            - name: entity.name.type.zedex
-              match: ->\s([A-Z][\w']*)
+            patterns:
+                  - match: ->\s([A-Z][\w']*)
+                    captures:
+                        '1': {name: entity.name.type.zedex}
       
       constructors:
             patterns:
@@ -71,16 +76,22 @@ repository:
                   - include: "#after-fat-arrow"
 
       after-definition:
-            - name: storage.type.zedex
-              match: :=\s([A-Z][\w']*)
+            patterns:
+                  - match: :=\s([A-Z][\w']*)
+                    captures:
+                        '1': {name: storage.type.zedex}
 
       after-pipe:
-            - name: storage.type.zedex
-              match: \|\s([A-Z][\w']*)
+            patterns:
+                  - match: \|\s([A-Z][\w']*)
+                    captures:
+                        '1': {name: storage.type.zedex}
 
       after-fat-arrow:
-            - name: storage.type.zedex
-              match: =>\s([A-Z][\w']*)
+            patterns:
+                  - match: =>\s([A-Z][\w']*)
+                    captures:
+                        '1': {name: storage.type.zedex}
 
       strings:
             name: string.quoted.double.zedex

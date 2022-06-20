@@ -25,7 +25,7 @@ git clone https://github.com/harrywik/zedex-syntax-highlighting.git
 
 - Windows
 
-Navigate to the vscode folder and cd into the extension folder. The vscode folder is typically located in the root of the drive that code or code-insiders was installed to. Thereafter simply clone this repository to the extension folder.
+Navigate to the vscode folder and cd into the extensions folder. The vscode folder is typically located in the root of the drive that code or code-insiders was installed to. Thereafter simply clone this repository to the extensions folder.
 ```
 git clone https://github.com/harrywik/zedex-syntax-highlighting.git
 ```

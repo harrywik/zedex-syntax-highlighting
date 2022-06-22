@@ -26,6 +26,9 @@
       "include": "#constructors"
     },
     {
+      "include": "#functions"
+    },
+    {
       "include": "#strings"
     },
     {
@@ -100,6 +103,12 @@
         },
         {
           "include": "#after-arrow-type-signature"
+        },
+        {
+          "include": "#after-typeclass"
+        },
+        {
+          "include": "#after-proof"
         }
       ]
     },
@@ -131,6 +140,30 @@
       "patterns": [
         {
           "match": "->\\s([A-Z][\\w']*)",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.zedex"
+            }
+          }
+        }
+      ]
+    },
+    "after-typeclass": {
+      "patterns": [
+        {
+          "match": "^typeclass\\s([A-Z][\\w']*)",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.zedex"
+            }
+          }
+        }
+      ]
+    },
+    "after-proof": {
+      "patterns": [
+        {
+          "match": "^proof\\s([\\s\\S]+)(?=\\swhere)",
           "captures": {
             "1": {
               "name": "entity.name.type.zedex"
@@ -183,6 +216,25 @@
           "captures": {
             "1": {
               "name": "storage.type.zedex"
+            }
+          }
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "include": "#function-definition"
+        }
+      ]
+    },
+    "function-definition": {
+      "patterns": [
+        {
+          "match": "(^[a-z][\\w']*)(?=\\s:\\s)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.zedex"
             }
           }
         }

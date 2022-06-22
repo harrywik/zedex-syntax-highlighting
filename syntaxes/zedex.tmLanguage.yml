@@ -9,6 +9,7 @@ patterns:
       - include: "#inbuilt-constants"
       - include: "#datatypes"
       - include: "#constructors"
+      - include: "#functions"
       - include: "#strings"
       - include: "#numbers"
 repository:
@@ -50,16 +51,18 @@ repository:
                   - include: "#type-definition"
                   - include: "#after-colon-type-signature"
                   - include: "#after-arrow-type-signature"
+                  - include: "#after-typeclass"
+                  - include: "#after-proof"
 
       type-definition:
             patterns:
                   - match: (^[A-Z][\w']*)(?=\s:=)
                     captures:
-                        '1': {name: entity.name.type.zedex} # does not work
-
+                        '1': {name: entity.name.type.zedex}
+                        
       after-colon-type-signature:
             patterns:
-                  - match: ^[a-z][\w']*\s:\s([A-Z][\w']*) # neither does this
+                  - match: ^[a-z][\w']*\s:\s([A-Z][\w']*)
                     captures:
                         '1': {name: entity.name.type.zedex}
 
@@ -69,6 +72,18 @@ repository:
                     captures:
                         '1': {name: entity.name.type.zedex}
       
+      after-typeclass:
+            patterns:
+                  - match: ^typeclass\s([A-Z][\w']*)
+                    captures:
+                        '1': {name: entity.name.type.zedex}
+
+      after-proof:
+            patterns:
+                  - match: ^proof\s([\s\S]+)(?=\swhere)
+                    captures:
+                        '1': {name: entity.name.type.zedex}
+
       constructors:
             patterns:
                   - include: "#after-definition"
@@ -92,6 +107,16 @@ repository:
                   - match: =>\s([A-Z][\w']*)
                     captures:
                         '1': {name: storage.type.zedex}
+
+      functions:
+            patterns:
+                  - include: "#function-definition"
+      
+      function-definition:
+            patterns:
+                  - match: (^[a-z][\w']*)(?=\s:\s)
+                    captures:
+                        '1': {name: entity.name.function.zedex}
 
       strings:
             name: string.quoted.double.zedex
